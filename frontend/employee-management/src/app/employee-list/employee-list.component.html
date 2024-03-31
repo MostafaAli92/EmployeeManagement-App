@@ -1,0 +1,83 @@
+<main>
+
+    <section class="py-5 text-center container">
+      <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto">
+          <h1 class="fw-light">Employee Management</h1>
+          <p class="lead text-muted">Welcome to the employee management system. This page allows you to perform CRUD (Create, Read, Update, Delete) operations on employee records.</p>
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addEmployeeModal">Add Employee</button>
+          <button type="button" class="btn btn-secondary" (click)="logOut()" style="margin-left: 10px;">Logout</button>
+        </div>
+      </div>
+    </section>
+
+    <div class="album py-5 bg-light">
+      <div class="container">
+
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
+          <div class="col" *ngFor="let employee of employeesList">
+            <div class="card shadow-sm">
+              <div class="card-body">
+                <form>
+                  <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" [(ngModel)]="employee.name"  name="name">
+                  </div>
+                  <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" [(ngModel)]="employee.email"  name="email">
+                  </div>
+                  <div class="form-group">
+                    <label for="departmentName">Department Name</label>
+                    <input type="text" class="form-control" [(ngModel)]="employee.department"  name="departmentName">
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group" style="padding-top: 10px;">
+                      <button type="button" class="btn btn-sm btn-outline-secondary" (click)="updateEmployee(employee)">Update</button>
+                      <button type="button" class="btn btn-sm btn-outline-secondary" (click)="removeEmployee(employee.id)" >Remove</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+      <!-- Add Employee Modal -->
+  <div class="modal fade" id="addEmployeeModal" tabindex="-1" aria-labelledby="addEmployeeModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="addEmployeeModalLabel">Add Employee</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <!-- Form for Adding Employee -->
+          <form>
+            <div class="form-group">
+              <label for="newEmployeeName">Name</label>
+              <input type="text" class="form-control" id="newEmployeeName" [(ngModel)]="newEmployee.name" name="newEmployeeName">
+            </div>
+            <div class="form-group">
+              <label for="newEmployeeEmail">Email</label>
+              <input type="email" class="form-control" id="newEmployeeEmail" [(ngModel)]="newEmployee.email" name="newEmployeeEmail">
+            </div>
+            <div class="form-group">
+              <label for="newEmployeeDepartmentName">Department Name</label>
+              <input type="text" class="form-control" id="newEmployeeDepartmentName" [(ngModel)]="newEmployee.department" name="newEmployeeDepartmentName">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="addEmployee()">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  </main>

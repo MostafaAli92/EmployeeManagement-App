@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>EmployeeAPI</name>
+    </assembly>
+    <members>
+        <member name="M:EmployeeAPI.Controllers.AuthenticationController.Login(EmployeeManagement.Data.Models.LoginModel)">
+            <summary>
+            Authenticate a user by providing login credentials.
+            </summary>
+            <remarks>
+            This endpoint allows users to authenticate by providing their login credentials.
+            If the provided credentials are valid, the user is authenticated and a token is generated.
+            </remarks>
+            <param name="model">The login credentials of the user.</param>
+            <returns>Returns an IActionResult indicating the result of the login attempt.</returns>
+            <response code="200">Returns an OK response with a success message if authentication is successful.</response>
+            <response code="400">Returns a Bad Request response with an error message if the provided payload is invalid or authentication fails.</response>
+            <response code="500">Returns a Server Error response if an unexpected error occurs during authentication.</response>
+        </member>
+        <member name="M:EmployeeAPI.Controllers.AuthenticationController.Register(EmployeeManagement.Data.Models.RegistrationModel)">
+            <summary>
+            Register a new user account.
+            </summary>
+            <remarks>
+            This endpoint allows users to register a new account by providing their registration details.
+            If the registration is successful, the user account is created and a success response is returned.
+            </remarks>
+            <param name="model">The registration details of the user.</param>
+            <returns>Returns an IActionResult indicating the result of the registration attempt.</returns>
+            <response code="201">Returns a Created response with the newly created user account details if registration is successful.</response>
+            <response code="400">Returns a Bad Request response with an error message if the provided payload is invalid or registration fails.</response>
+            <response code="500">Returns a Server Error response if an unexpected error occurs during registration.</response>
+        </member>
+        <member name="M:EmployeeAPI.Controllers.EmployeeController.GetAllEmployees">
+            <summary>
+            Get all employees
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:EmployeeAPI.Controllers.EmployeeController.GetEmployeeById(System.Int32)">
+            <summary>
+            Get specific employee by id
+            </summary>
+            <param name="id">Employee id</param>
+            <returns></returns>
+        </member>
+        <member name="M:EmployeeAPI.Controllers.EmployeeController.AddEmployee(EmployeeAPI.Dtos.Employee.EmployeeCreateDto)">
+            <summary>
+            Add a new employee
+            </summary>
+            <param name="employeeCreateDto">Employee data</param>
+            <returns></returns>
+        </member>
+        <member name="M:EmployeeAPI.Controllers.EmployeeController.UpdateEmployee(System.Int32,EmployeeAPI.Dtos.Employee.EmployeeUpdateDto)">
+            <summary>
+            Update all employee data
+            </summary>
+            <param name="id"></param>
+            <param name="employeeUpdateDto">All employee object data</param>
+            <returns></returns>
+        </member>
+        <member name="M:EmployeeAPI.Controllers.EmployeeController.PatchEmployee(System.Int32,Microsoft.AspNetCore.JsonPatch.JsonPatchDocument{EmployeeAPI.Dtos.Employee.EmployeeUpdateDto})">
+            <summary>
+            Update specific data of the employee data
+            </summary>
+            <param name="id"></param>
+            <param name="jsonPatchDocument">Json patch data contain (op,path, and value)</param>
+            <returns></returns>
+        </member>
+        <member name="M:EmployeeAPI.Controllers.EmployeeController.DeleteEmployee(System.Int32)">
+            <summary>
+            Delete employee
+            </summary>
+            <param name="id">The employee id</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

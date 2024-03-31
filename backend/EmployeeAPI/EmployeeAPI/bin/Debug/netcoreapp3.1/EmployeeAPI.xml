@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>EmployeeAPI</name>
+    </assembly>
+    <members>
+        <member name="M:EmployeeAPI.Controllers.EmployeeController.GetAllEmployees">
+            <summary>
+            Get all employees
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:EmployeeAPI.Controllers.EmployeeController.GetEmployeeById(System.Int32)">
+            <summary>
+            Get specific employee by id
+            </summary>
+            <param name="id">Employee id</param>
+            <returns></returns>
+        </member>
+        <member name="M:EmployeeAPI.Controllers.EmployeeController.AddEmployee(EmployeeAPI.Dtos.EmployeeCreateDto)">
+            <summary>
+            Add a new employee
+            </summary>
+            <param name="employeeCreateDto">Employee data</param>
+            <returns></returns>
+        </member>
+        <member name="M:EmployeeAPI.Controllers.EmployeeController.UpdateEmployee(System.Int32,EmployeeAPI.Dtos.EmployeeUpdateDto)">
+            <summary>
+            Update all employee data
+            </summary>
+            <param name="id"></param>
+            <param name="employeeUpdateDto">All employee object data</param>
+            <returns></returns>
+        </member>
+        <member name="M:EmployeeAPI.Controllers.EmployeeController.PatchEmployee(System.Int32,Microsoft.AspNetCore.JsonPatch.JsonPatchDocument{EmployeeAPI.Dtos.EmployeeUpdateDto})">
+            <summary>
+            Update specific data of the employee data
+            </summary>
+            <param name="id"></param>
+            <param name="jsonPatchDocument">Json patch data contain (op,path, and value)</param>
+            <returns></returns>
+        </member>
+        <member name="M:EmployeeAPI.Controllers.EmployeeController.DeleteEmployee(System.Int32)">
+            <summary>
+            Delete employee
+            </summary>
+            <param name="id">The employee id</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
